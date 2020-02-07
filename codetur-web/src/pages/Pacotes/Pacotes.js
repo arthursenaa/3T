@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Accordion, Card, Button, Table, ButtonToolbar, Jumbotron , Nav } from 'react-bootstrap';
+import { Accordion, Card, Button, Table, ButtonToolbar, Jumbotron, Nav } from 'react-bootstrap';
 import { parseJwt } from '../../services/auth';
 import './Pacote.css';
 
@@ -30,7 +30,8 @@ export default class Pacotes extends Component {
     render() {
         return (
             <div className="Pacote">
-                <Nav variant="pills" defaultActiveKey="/home" style={{backgroundColor:"black"}}>
+
+                <Nav variant="pills" defaultActiveKey="/home" style={{ backgroundColor: "black" }}>
                     <Nav.Item>
                         <Nav.Link href="/Pacotes">Lista de Pacotes</Nav.Link>
                     </Nav.Item>
@@ -38,15 +39,19 @@ export default class Pacotes extends Component {
                         <Nav.Link href="/Cadastrar">Cadastrar Oferta</Nav.Link>
                     </Nav.Item>
                 </Nav>
+
                 <br></br>
+
                 <div className="Detalhes" style={{ marginLeft: "8%", marginRight: "8%" }}>
                     <br></br>
+
                     {this.state.pacotes.map(element => {
                         return (
-                            <Jumbotron>
-                                <div style={{ display: 'flex' }}>
 
-                                    <div>
+                            <Jumbotron>
+                                <div style={{ display: 'flex',overflow: 'hidden' }}>
+
+                                    <div style={{width:'50%'}}>
                                         <h1>{element.titulo}</h1>
                                         <p>{element.descricao} <br></br> - {element.pais}</p>
                                         <p>
@@ -54,10 +59,11 @@ export default class Pacotes extends Component {
                                         </p>
                                     </div>
                                     <div style={{ marginLeft: '5%' }}>
-                                        <img src={element.imagem} alt="img pacote" style={{ position: 'absolute', width: '40%', height: '25%' }}></img>
+                                        <img src={element.imagem} alt="img pacote" style={{ position: 'absolute', height: '25%' }}></img>
                                     </div>
                                 </div>
                             </Jumbotron>
+
                         );
                     })}
 

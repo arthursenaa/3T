@@ -4,6 +4,7 @@ import Axios from 'axios';
 
 import './App.css';
 
+
 export default class App extends Component {
 
   constructor() {
@@ -34,7 +35,7 @@ export default class App extends Component {
         if (data.status === 200) {
           localStorage.setItem("usuario-codetur", data.data.token);
           
-          this.props.history.push("/Pacotes");         
+          this.props.history.push('/Pacotes');         
           
         } else {
         }
@@ -48,8 +49,6 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>OIOIOIS</h1>
-
         <div className="divForm">
 
             <form onSubmit={this.efetuarLogin} className="form">
